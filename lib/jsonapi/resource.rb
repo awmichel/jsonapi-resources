@@ -1137,7 +1137,7 @@ module JSONAPI
         # Note that `paths` returns partial paths before complete paths, so e.g. the partial
         # fragments for posts.comments will exist before we start working with posts.comments.author
         target_resources = {}
-        include_directives.paths.each do |path|
+        include_directives.model_paths.each do |path|
           # If path is [:posts, :comments, :author], then...
           pluck_attrs = [] # ...will be [posts.id, comments.id, authors.id, authors.updated_at]
           pluck_attrs << self._model_class.arel_table[self._primary_key]

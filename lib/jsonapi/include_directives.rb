@@ -40,6 +40,10 @@ module JSONAPI
       delve_paths(get_includes(@include_directives_hash, false))
     end
 
+    def model_paths
+      delve_paths(get_includes(@include_directives_hash, true))
+    end
+
     private
 
     def get_related(current_path)
